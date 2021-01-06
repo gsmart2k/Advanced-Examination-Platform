@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Online <span>Test</span> </h3>
+        <h2 class="welcome">Welcome <%= name %> !</h2>
+        <p class="para">Pls carefully select your subject combinations !</p>
+        <div>
+            <form method="POST" action="/dashboard">
+                <div class="sub-container">
+                    <div class="subs-div li">
+                        <input type="checkbox" value="1" class="inputs"  name="English">
+                        <p class="sub">English</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="2" class="inputs"  name="Mathematics" >
+                        <p class="sub">Mathematics</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="3" class="inputs"  name="Physics">
+                        <p class="sub">Physics</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="4" class="inputs"  name="Chemistry">
+                        <p class="sub">Chemistry</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="5" class="inputs"  name="Biology">
+                        <p class="sub">Biology</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="6" class="inputs"  name="Agric">
+                        <p class="sub">Agricultural Science</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="7" class="inputs"  name="Civic">
+                        <p class="sub">Civic Education</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="8" class="inputs"  name="Computer" >
+                        <p class="sub">Computer Science</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="9" class="inputs"  name="Further"  >
+                        <p class="sub">Further Mathematics</p>
+                    </div>
+                    <div class="subs-div li">
+                        <input type="checkbox" value="10" class="inputs"  name="CRS" >
+                        <p class="sub">C.R.S</p>
+                    </div>
+                <button class="btn"> Start Now !</button>
+            </div>
+            </form>
+        </div>
+        <p class="note"><span>Note : </span> You have 5mins for each subject, which contains
+            10 questions each.</p>
+    </div>
+    
+</body>
+<script async>
+    const subscontainer = document.querySelector(".sub-container")
+
+    const inputted = document.querySelectorAll(".inputs")
+    const inputchecked = document.querySelectorAll(".inputs:checked")
+
+    
+
+    var checked = 0
+    for(var i = 0; i<inputted.length; i++){
+        var theinput = inputted[i]
+        
+        theinput.addEventListener('click',(event)=>{
+            console.log(event.target.checked)
+            if(event.target.type === 'checkbox' && event.target.checked === true) {
+            console.log("hello")
+            checked++;
+            console.log(checked)
+            }
+            if(event.target.type === 'checkbox' && event.target.checked === false) {
+            console.log("hello")
+            checked--;
+            }
+            if(checked >= 4){
+            const inputs = document.querySelectorAll(".inputs:not(:checked)")
+            console.log(inputs)
+                for(var i = 0 ; i<inputs.length; i++){
+                    inputs[i].parentElement.classList.add("hide")
+                }
+            }
+            if(checked < 4){
+            const inputs = document.querySelectorAll(".inputs:not(:checked)")
+            console.log(inputs)
+                for(var i = 0 ; i<inputs.length; i++){
+                    inputs[i].parentElement.classList.remove("hide")
+                }
+            }
+        })
+    }
+
+</script>
+</html>
+

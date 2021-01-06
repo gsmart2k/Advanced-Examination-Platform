@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  display: block;
+  margin: 2em auto 0em auto;
+}
+.container h3 {
+  text-align: left;
+  position: relative;
+  left: 2em;
+  color: #000;
+  font-size: 1em;
+  font-family: futura Md bt;
+}
+.container h3 span {
+  display: block;
+  position: relative;
+  bottom: 0.5em;
+  left: 0.4em;
+  font-family: ar berkley;
+}
+.welcome {
+  text-align: center;
+  color: orange;
+  font-size: 2em;
+}
+.para {
+  text-align: center;
+  color: #000;
+  font-stretch: wider;
+  font-family: futura bk bt;
+}
+
+.li {
+  display: inline-block;
+  padding: 1em 3em;
+  list-style-type: none;
+  width: 50%;
+  background: #232323;
+  margin: 1em auto;
+  color: #fff;
+  font-family: futura bk bt;
+  text-align: center;
+}
+.btn {
+  padding: 1em;
+  margin: 1em;
+  border: none;
+  outline: none;
+  color: white;
+  background: orange;
+  cursor: pointer;
+}
+.note {
+  color: #000;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.note span {
+  color: orange;
+  font-weight: bolder;
+}
+.active {
+  background: rgb(75, 73, 73);
+}
+.nodisplay {
+  display: none;
+}
+.subs-div {
+  display: block;
+  text-align: left;
+}
+.inputs {
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+.sub {
+  display: inline-block;
+  font-size: 1.5em;
+}
+.hide {
+  display: none;
+}

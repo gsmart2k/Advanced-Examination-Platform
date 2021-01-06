@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/questionpage.css">
+</head>
+<body>
+    <div><%= message %></div>
+    
+    <div class="container">
+        <div class="header">
+            <h3 class="heading-text">Online <span>Test</span> </h3>
+            <!-- <h3 class="user"><%= datum[0].subject %></h3> -->
+            <div class="timer"><h4 class="min"> <%= min %> </h4><span>:</span><h4 class="sec"><%= sec %></h4></div>
+        </div>
+            <div class="selectedSubs">
+                <ul class="selected-ul">
+                <% for(var i = 0; i < usersubs.length; i++){ %>
+                        <li class="active li"><%= usersubs[i] %></li>
+                <% } %>
+                </ul>
+            </div>
+
+
+                <div class="question">
+                    <form method="POST" action="/questionpage" >
+                                <% datum.map(dat=>{ %>
+                                <% dat.data[0].Mathematics.map(ques=> { %>
+                                <div class="questions-wrapper hide">
+                                     <h4 class="question-text"><%= ques.question %></h4>
+                                        <div class="question-options-div">
+                                            <% ques.options.map(opts=> { %>
+
+                                                <input name = "<%= ques.question_id %>" value="<%= opts %>" type = "radio" class="options li"/>
+                                                   <p class="opts"><%= opts %></p>   
+                                                  
+                                              
+                                            <% }) %>
+                                        </div>
+                                        <div class="btn-div">
+                                            <div onclick="plusSlides(-1)" class="btn min1">PREV</div>
+                                            <div onclick="plusSlides(1)" class="btn plus1">NEXT</div>
+                                        </div>
+                                </div>
+                                <button class="submit"> SUBMIT </button> 
+                         
+                                <% }) %>
+                                <% }) %>
+                            </form>              
+                </div>
+            
+                
+                <p class="pee">Note: <span> You have just 20min for this test</span> </p>
+    </div>
+</body>
+<script async>
+    
+
+    var usertime = document.querySelector(".timer")
+    var usermin = document.querySelector(".min")
+    var usersec = document.querySelector(".sec")
+   
+    var question_ul = document.querySelector(".question-ul")
+    var options = document.querySelectorAll(".options")
+
+    var questions = document.querySelector(".question")
+    var questionswrapper = document.querySelectorAll(".questions-wrapper")
+
+    var nextquestion = document.querySelector(".plus1")
+    var prevquestion = document.querySelector(".min1")
+    var show = document.querySelectorAll(".show")
+    var hide = document.querySelectorAll(".hide")
+
+    var slideIndex = 1;
+    showSlides(slideIndex)
+
+    function plusSlides(n){
+        showSlides(slideIndex += n)
+    }
+    
+    function currentSlide(n){
+        showSlides(slideIndex = n)
+    }
+
+    // nextquestion.addEventListener('click',(e)=>{
+    //     e.preventDefault()
+    // })
+
+    // prevquestion.addEventListener('click',(e)=>{
+    //     e.preventDefault()
+    // })
+    
+    function showSlides(n){
+        var i;
+        var slides = document.getElementsByClassName("questions-wrapper");
+        if(n > slides.length){
+            slideIndex = 1
+        }
+        if(n < 1){
+            slideIndex = slides.length
+        }
+        for(i = 0; i<slides.length; i++){
+            slides[i].style.display = "none"
+        }
+        slides[slideIndex - 1].style.display = "block";       
+    }
+    var msec = usersec.textContent
+    var min = usermin.textContent
+    console.log(msec,min)
+    console.log("ddd")
+    function startTimer(){
+        msec = msec - 1
+        if(msec == 0){
+            msec=59
+            min =  min - 1;
+        }
+       usermin.textContent = min
+       usersec.textContent = msec
+
+    }
+    
+   setInterval(startTimer, 1000)
+
+
+
+   
+
+
+    var answer = document.querySelector('.correct').value
+    const correct = []
+
+    console.log(options)
+    for(var i = 0; i<options.length; i++){
+        options[i].addEventListener('click',(event)=>{
+            console.log(event.target.textContent)
+            console.log(event.target.textContent === answer)
+            console.log(answer)
+            if(event.target.textContent === answer){
+                alert("answer")
+                correct.push("correct")
+            }
+            console.log(correct)
+        })
+    }
+ 
+    
+   
+
+</script>
+</html>
+
+
+
+<!-- var plus = +1
+    console.log(show)
+   
+
+console.log(show)
+    var plus = 1
+    var minus = 1
+
+    nextquestion.addEventListener('click', nextQues)
+    
+   
+
+    prevquestion.addEventListener('click', prevQues)
+
+    function nextQues(next){
+        quess(plus)
+        increase()
+     }
+
+
+     function increase(){
+        plus += plus   
+     }
+
+
+     function quess(n){
+        questionswrapper[hide.length - (hide.length-n)].style.display = "block"
+    }
+
+    function prevQues(){
+        minus += minus    } -->

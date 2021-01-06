@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: block;
+}
+.header {
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding: 2em;
+  align-content: space-between;
+  margin: 1em auto;
+}
+.heading-text {
+  display: inline-block;
+  width: 32%;
+  font-family: futura bk bt;
+  text-align: left;
+}
+.heading-text span {
+  display: block;
+  position: relative;
+  bottom: 0.4em;
+  left: 0em;
+}
+
+.user {
+  display: inline-block;
+  text-align: center;
+  width: 34%;
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: futura md bt;
+  color: orange;
+}
+.selectedsubs {
+  display: block;
+}
+.selected-ul {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+.li {
+  display: inline-block;
+  font-family: futura bk bt;
+  padding: 0.4em 0.6em;
+  margin: 0.3px 0.1em 0.3em 0.3em;
+  background: #232323;
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 100;
+}
+.question {
+  display: block;
+  width: 50%;
+  min-height: auto;
+  height: 50%;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+.question-text {
+  display: block;
+  font-family: futura bk bt;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+.question-options-div {
+  display: block;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.btn-div {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.7em 1.2em;
+  border: none;
+  outline: none;
+  display: inline-block;
+  margin: 0em 5em;
+  background: orange;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.pee {
+  text-align: center;
+  margin: 1em;
+  font-weight: bolder;
+  color: orange;
+}
+.pee span {
+  color: #000;
+}
+.active {
+  background: rgb(75, 73, 73);
+}
+.submit {
+  margin: 2em 0em 2em 25.5em;
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  bottom: 5em;
+  left: 0em;
+}
+.timer {
+  display: inline-block;
+  width: 32.5%;
+  align-content: flex-end;
+  justify-self: flex-end;
+  text-align: right;
+  font-size: 2em;
+  color: #ffa500;
+}
+.min {
+  display: inline-block;
+}
+.sec {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.opts {
+  margin: 0em 1em 0em 0em;
+  display: inline-block;
+}

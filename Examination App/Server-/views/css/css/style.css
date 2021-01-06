@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  display: block;
+  margin: 5% auto;
+}
+.heading {
+  display: block;
+  font-weight: bolder;
+  text-align: center;
+  color: orange;
+  font-size: 4em;
+}
+.heading span {
+  display: block;
+  color: orange;
+  position: relative;
+  bottom: 0.5em;
+  font-family: ar berkley;
+}
+.form {
+  display: block;
+}
+.form input {
+  display: block;
+  padding: 1em;
+  width: 40%;
+  margin: 2em auto;
+}
+.login {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  outline: none;
+  border: none;
+  color: #fff;
+  margin: 0 auto;
+  background-color: orange;
+  font-weight: bolder;
+  cursor: pointer;
+
+  box-shadow: 1px 1px 5px 0.5px black;
+}
+.login:hover {
+  background-color: #fff;
+  color: orange;
+}
+.errosdiv {
+  background: wheat;
+  text-align: center;
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+.errors {
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const li = document.getElementsByClassName("li")
+const active = document.getElementsByClassName("active")
+// console.log(li);
+
+for(var i= 0; i<li.length; i++){
+    let newli = li[i]
+    newli.addEventListener("click",inputAbove)
+
+    function inputAbove(){
+        let element = document.createElement("input")
+        element.type="hidden"
+        element.name = newli.id
+        element.value=newli.value
+        element.classList = "nodisplay active"
+        console.log(element)
+        // let element = `<input class="nodisplay" type="hidden"  name="${newli.id}">`
+        newli.before(element)
+        if(newli.previousSibling === element){
+            console.log("already there")
+        }
+        newli.classList.add("active")
+        console.log(newli)
+    }
+}
+
+
+for(var i = 0;i < active.length; i++){
+    const actives = active[i]
+    console.log(actives)
+    actives.addEventListener("click",()=>{
+        actives.classList.replace("")
+    })
+}

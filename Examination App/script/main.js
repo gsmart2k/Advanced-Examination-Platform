@@ -1,0 +1,54 @@
+const users = [
+    {
+        id:"a001",
+        username:"Gsmart",
+        password:"Fatherwell2000"
+    },
+    {
+        id:"a002",
+        username:"Jibola",
+        password:"Motherwell2000"
+    },
+    {
+        id:"a003",
+        username:"Oyinda",
+        password:"Sisterwell2000"
+    },
+    {
+        id:"a004",
+        username:"Fiyin",
+        password:"Unclewell2000"
+    },
+    {
+        id:"a005",
+        username:"Joshua",
+        password:"Joshuawell2000"
+    },
+    {
+        id:"a006",
+        username:"Adekunle",
+        password:"ll2000"
+    },
+    {
+        id:"a007",
+        username:"Samson",
+        password:"Fatherwell2000"
+    },
+    {
+        id:"a008",
+        username:"Esther",
+        password:"Fatherwell2000"
+    },
+    {
+        id:"a009",
+        username:"Ruth",
+        password:"Fatherwell2000"
+    },
+    {
+        id:"a0010",
+        username:"Jaiye",
+        password:"Fatherwell2000"
+    },
+]
+
+export default Users;

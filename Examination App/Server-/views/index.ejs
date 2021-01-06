@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+    <div class="container">
+        <h3 class="heading">Online <span>Test</span></h3>
+        <div class="erros-container">
+            <% if (errors) {%>
+                <div class="errosdiv">
+                <% for (var i=0; i<errors.length; i++) { %>
+                    <p class="errors"><%= errors[i].msg %></p>
+                <% } %>
+                </div>
+             <% } %>
+             <% if (success) {%>
+                <div class="errosdiv">
+                    <p class="errors"> Login Success !</p>
+                </div>
+             <% } %>
+        </div>
+        <form action="/" method="POST" class="form">
+            <input name="username" placeholder = "Username !"type="text">
+            <input  name="password" placeholder = "Password !"type="password">
+            <button class="login"> LOG IN</button>
+        </form>
+    </div>
+</body>
+<script async src="script/app.js"></script>
+</html>
